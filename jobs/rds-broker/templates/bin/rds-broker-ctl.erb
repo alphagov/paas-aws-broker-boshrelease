@@ -13,7 +13,7 @@ case $1 in
     echo $$ > ${RDS_BROKER_PID_FILE}
 
     # Start RDS Broker service
-    exec /var/vcap/packages/rds-broker/bin/rds-broker \
+    exec /var/vcap/packages/rds-broker/bin/paas-rds-broker \
       --config=${RDS_BROKER_CONF_DIR}/rds-config.json \
       --port=${RDS_BROKER_PORT} \
       >>${RDS_BROKER_LOG_DIR}/${OUTPUT_LABEL}.stdout.log \
