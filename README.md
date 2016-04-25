@@ -1,9 +1,11 @@
 # AWS Service Broker BOSH Release
 
-This is a [BOSH](http://bosh.io/) release for several AWS Service Brokers:
-* [AWS CloudFormation Service Broker](https://github.com/cf-platform-eng/cloudformation-broker)
-* [AWS RDS Service Broker](https://github.com/cf-platform-eng/rds-broker)
-* [AWS SQS Service Broker](https://github.com/cf-platform-eng/sqs-broker)
+This is a [BOSH](http://bosh.io/) release for [AWS RDS Service Broker](https://github.com/alphagov/paas-rds-broker)
+
+This is a fork of [AWS Service Broker BOSH Release](https://github.com/cf-platform-eng/aws-broker-boshrelease) written by Pivotal Software Inc.
+
+We have removed all references to [AWS CloudFormation Service Broker](https://github.com/cf-platform-eng/cloudformation-broker) and [AWS SQS Service Broker](https://github.com/cf-platform-eng/sqs-broker) that were included in original repository. 
+
 
 ## Disclaimer
 
@@ -13,7 +15,7 @@ This is NOT presently a production ready AWS Service Broker BOSH release. This i
 
 ### AWS credentials and permissions
 
-This BOSH release requires an AWS user with some advanced privileges. Instead of using your primary AWS admin user, it is recommended to create a new AWS user (with the proper access keys), create an specific policy based on the [iam_policy.json](https://github.com/cf-platform-eng/aws-broker-boshrelease/blob/master/iam_policy.json) file, and then attach the policy to the user.
+This BOSH release requires an AWS user with some advanced privileges. Instead of using your primary AWS admin user, it is recommended to create a new AWS user (with the proper access keys), create an specific policy based on the [iam_policy.json](https://github.com/alphagov/paas-aws-broker-boshrelease/blob/master/iam_policy.json) file, and then attach the policy to the user.
 
 ### Using BOSH
 
@@ -23,14 +25,14 @@ To use this BOSH release, first upload it to your BOSH:
 
 ```
 bosh target BOSH_HOST
-git clone https://github.com/cf-platform-eng/aws-broker-boshrelease.git
+git clone https://github.com/alphagov/paas-aws-broker-boshrelease.git
 cd aws-broker-boshrelease
 bosh upload release releases/aws-broker/aws-broker-2.yml
 ```
 
 #### Create a BOSH deployment manifest
 
-Now create a deployment file (using the files at the [examples](https://github.com/cf-platform-eng/aws-broker-boshrelease/blob/master/examples/) directory as a starting point).
+Now create a deployment file (using the files at the [examples](https://github.com/alphagov/paas-aws-broker-boshrelease/blob/master/examples/) directory as a starting point).
 
 #### Deploy using the BOSH deployment manifest
 
@@ -41,10 +43,8 @@ bosh deployment path/to/deployment.yml
 bosh -n deploy
 ```
 
-Refer to the different broker's documentation for more details about the required properties:
-* [AWS CloudFormation Service Broker Documentation](https://github.com/cf-platform-eng/cloudformation-broker/blob/master/CONFIGURATION.md)
-* [AWS RDS Service Broker Documentation](https://github.com/cf-platform-eng/rds-broker/blob/master/CONFIGURATION.md)
-* [AWS SQS Service Broker Documentation](https://github.com/cf-platform-eng/sqs-broker/blob/master/CONFIGURATION.md)
+Refer to the broker's documentation for more details about the required properties:
+* [AWS RDS Service Broker Documentation](https://github.com/alphagov/paas-rds-broker/blob/master/CONFIGURATION.md)
 
 ### Using [Pivotal Ops Manager](https://network.pivotal.io/products/ops-manager)
 
@@ -54,11 +54,11 @@ You can deploy the AWS Service Broker using [Pivotal Ops Manager](https://networ
 
 ##### Build the Pivotal tile
 
-Update the [handcraft.yml](https://github.com/cf-platform-eng/aws-broker-boshrelease/blob/master/metadata_parts/handcraft.yml) file with your modifications. Then, build the Pivotal tile:
+Update the [handcraft.yml](https://github.com/alphagov/paas-aws-broker-boshrelease/blob/master/metadata_parts/handcraft.yml) file with your modifications. Then, build the Pivotal tile:
 
 ```
-git clone https://github.com/cf-platform-eng/aws-broker-boshrelease.git
-cd aws-broker-boshrelease
+git clone https://github.com/alphagov/paas-aws-broker-boshrelease.git
+cd paas-aws-broker-boshrelease
 bundle install
 bundle exec vara build-pivotal .
 ```
@@ -73,6 +73,8 @@ Upload the Pivotal tile `p-aws-broker-0.1.1.0.pivotal` to your Pivotal Ops Manag
 
 ## Contributing
 
+Please note that this is a fork of [AWS RDS Service Broker](https://github.com/alphagov/paas-rds-broker). If you want to contribute please consider creating a PR for upstream repository.
+
 In the spirit of [free software](http://www.fsf.org/licensing/essays/free-sw.html), **everyone** is encouraged to help improve this project.
 
 Here are some ways *you* can contribute:
@@ -84,11 +86,11 @@ Here are some ways *you* can contribute:
 * by writing specifications
 * by writing code (**no patch is too small**: fix typos, add comments, clean up inconsistent whitespace)
 * by refactoring code
-* by closing [issues](https://github.com/cf-platform-eng/aws-broker-boshrelease/issues)
+* by closing [issues](https://github.com/alphagov/paas-aws-broker-boshrelease/issues)
 * by reviewing patches
 
 ### Submitting an Issue
-We use the [GitHub issue tracker](https://github.com/cf-platform-eng/aws-broker-boshrelease/issues) to track bugs and features. Before submitting a bug report or feature request, check to make sure it hasn't already been submitted. You can indicate support for an existing issue by voting it up. When submitting a bug report, please include a
+We use the [GitHub issue tracker](https://github.com/alphagov/paas-aws-broker-boshrelease/issues) to track bugs and features. Before submitting a bug report or feature request, check to make sure it hasn't already been submitted. You can indicate support for an existing issue by voting it up. When submitting a bug report, please include a
 [Gist](http://gist.github.com/) that includes a stack trace and any details that may be necessary to reproduce the bug,. Ideally, a bug report should include a pull request with failing specs.
 
 ### Submitting a Pull Request
@@ -101,4 +103,4 @@ We use the [GitHub issue tracker](https://github.com/cf-platform-eng/aws-broker-
 
 ## Copyright
 
-Copyright (c) 2015 Pivotal Software, Inc. See [LICENSE](https://github.com/cf-platform-eng/aws-broker-boshrelease/blob/master/LICENSE) for details.
+Copyright (c) 2015 Pivotal Software, Inc & 2016 [Government Digital Service](https://www.gov.uk/government/organisations/government-digital-service). See [LICENSE](https://github.com/alphagov/paas-aws-broker-boshrelease/blob/master/LICENSE) for details.
