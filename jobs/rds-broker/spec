@@ -38,13 +38,13 @@ properties:
     default: "cf"
   rds-broker.allow_user_provision_parameters:
     description: "Allow users to send arbitrary parameters on provision calls"
-    default: true
+    default: false
   rds-broker.allow_user_update_parameters:
     description: "Allow users to send arbitrary parameters on update calls"
-    default: true
+    default: false
   rds-broker.allow_user_bind_parameters:
     description: "Allow users to send arbitrary parameters on bind calls"
-    default: true
+    default: false
   rds-broker.catalog:
     description: "RDS Broker catalog"
     default: {}
