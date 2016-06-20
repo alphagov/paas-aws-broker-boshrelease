@@ -36,6 +36,10 @@ properties:
   rds-broker.db_prefix:
     description: "Prefix to add to RDS DB Identifiers"
     default: "cf"
+  rds-broker.master_password_seed:
+    description: "Secret seed to be used when generating the master RDS DB password"
+  rds-broker.broker_name:
+    description: "Unique name of RDS broker, used to construct a tag for instance identification"
   rds-broker.allow_user_provision_parameters:
     description: "Allow users to send arbitrary parameters on provision calls"
     default: false
