@@ -26,6 +26,8 @@ properties:
   rds-broker.password:
     description: "Broker Auth Password"
     default: "rds-broker"
+  rds-broker.state_encryption_key:
+    description: "Key to use to encrypt any stored secrets"
   rds-broker.aws_access_key_id:
     description: "AWS Access Key ID"
   rds-broker.aws_secret_access_key:
