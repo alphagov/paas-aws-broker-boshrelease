@@ -16,8 +16,8 @@ case $1 in
     exec /var/vcap/packages/rds-broker/bin/paas-rds-broker \
       --config=${RDS_BROKER_CONF_DIR}/rds-config.json \
       --port=${RDS_BROKER_PORT} \
-      >>${RDS_BROKER_LOG_DIR}/${OUTPUT_LABEL}.stdout.log \
-      2>>${RDS_BROKER_LOG_DIR}/${OUTPUT_LABEL}.stderr.log
+      > >(tee -a ${RDS_BROKER_LOG_DIR}/${OUTPUT_LABEL}.stdout.log | logger -t vcap.${OUTPUT_LABEL}.stdout) \
+      2> >(tee -a ${RDS_BROKER_LOG_DIR}/${OUTPUT_LABEL}.stderr.log | logger -t vcap.${OUTPUT_LABEL}.stderr)
     ;;
 
   stop)
