@@ -1,5 +1,5 @@
 <%
-deployment_name = "aws-broker"
+deployment_name = "rds-broker"
 director_uuid = "CHANGE-ME"
 aws_access_key_id = "CHANGE-ME"
 aws_secret_access_key = "CHANGE-ME"
@@ -10,7 +10,7 @@ name: <%= deployment_name %>
 director_uuid: <%= director_uuid %>
 
 releases:
-  - name: aws-broker
+  - name: rds-broker
     version: latest
 
 compilation:
