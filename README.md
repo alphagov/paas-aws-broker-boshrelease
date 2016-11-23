@@ -15,7 +15,7 @@ This is NOT presently a production ready AWS Service Broker BOSH release. This i
 
 ### AWS credentials and permissions
 
-This BOSH release requires an AWS user with some advanced privileges. Instead of using your primary AWS admin user, it is recommended to create a new AWS user (with the proper access keys), create an specific policy based on the [iam_policy.json](https://github.com/alphagov/paas-aws-broker-boshrelease/blob/master/iam_policy.json) file, and then attach the policy to the user.
+This BOSH release requires an AWS user with some advanced privileges. Instead of using your primary AWS admin user, it is recommended to create a new AWS user (with the proper access keys), create an specific policy based on the [iam_policy.json](iam_policy.json) file, and then attach the policy to the user.
 
 ### Using BOSH
 
@@ -25,14 +25,14 @@ To use this BOSH release, first upload it to your BOSH:
 
 ```
 bosh target BOSH_HOST
-git clone https://github.com/alphagov/paas-aws-broker-boshrelease.git
+git clone https://github.com/alphagov/paas-rds-broker-boshrelease.git
 cd aws-broker-boshrelease
 bosh upload release releases/aws-broker/aws-broker-2.yml
 ```
 
 #### Create a BOSH deployment manifest
 
-Now create a deployment file (using the files at the [examples](https://github.com/alphagov/paas-aws-broker-boshrelease/blob/master/examples/) directory as a starting point).
+Now create a deployment file (using the files in the [examples](examples/) directory as a starting point).
 
 #### Deploy using the BOSH deployment manifest
 
@@ -54,11 +54,11 @@ You can deploy the AWS Service Broker using [Pivotal Ops Manager](https://networ
 
 ##### Build the Pivotal tile
 
-Update the [handcraft.yml](https://github.com/alphagov/paas-aws-broker-boshrelease/blob/master/metadata_parts/handcraft.yml) file with your modifications. Then, build the Pivotal tile:
+Update the [handcraft.yml](metadata_parts/handcraft.yml) file with your modifications. Then, build the Pivotal tile:
 
 ```
-git clone https://github.com/alphagov/paas-aws-broker-boshrelease.git
-cd paas-aws-broker-boshrelease
+git clone https://github.com/alphagov/paas-rds-broker-boshrelease.git
+cd paas-rds-broker-boshrelease
 bundle install
 bundle exec vara build-pivotal .
 ```
@@ -86,11 +86,11 @@ Here are some ways *you* can contribute:
 * by writing specifications
 * by writing code (**no patch is too small**: fix typos, add comments, clean up inconsistent whitespace)
 * by refactoring code
-* by closing [issues](https://github.com/alphagov/paas-aws-broker-boshrelease/issues)
+* by closing [issues](https://github.com/alphagov/paas-rds-broker-boshrelease/issues)
 * by reviewing patches
 
 ### Submitting an Issue
-We use the [GitHub issue tracker](https://github.com/alphagov/paas-aws-broker-boshrelease/issues) to track bugs and features. Before submitting a bug report or feature request, check to make sure it hasn't already been submitted. You can indicate support for an existing issue by voting it up. When submitting a bug report, please include a
+We use the [GitHub issue tracker](https://github.com/alphagov/paas-rds-broker-boshrelease/issues) to track bugs and features. Before submitting a bug report or feature request, check to make sure it hasn't already been submitted. You can indicate support for an existing issue by voting it up. When submitting a bug report, please include a
 [Gist](http://gist.github.com/) that includes a stack trace and any details that may be necessary to reproduce the bug,. Ideally, a bug report should include a pull request with failing specs.
 
 ### Submitting a Pull Request
@@ -103,4 +103,4 @@ We use the [GitHub issue tracker](https://github.com/alphagov/paas-aws-broker-bo
 
 ## Copyright
 
-Copyright (c) 2015 Pivotal Software, Inc & 2016 [Government Digital Service](https://www.gov.uk/government/organisations/government-digital-service). See [LICENSE](https://github.com/alphagov/paas-aws-broker-boshrelease/blob/master/LICENSE) for details.
+Copyright (c) 2015 Pivotal Software, Inc & 2016 [Government Digital Service](https://www.gov.uk/government/organisations/government-digital-service). See [LICENSE](LICENSE) for details.

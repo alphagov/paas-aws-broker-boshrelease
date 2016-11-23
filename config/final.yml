@@ -1,5 +1,5 @@
 ---
-final_name: aws-broker
+final_name: rds-broker
 blobstore:
   provider: s3
   options:

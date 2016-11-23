@@ -1,5 +1,5 @@
 <%
-deployment_name = "aws-broker"
+deployment_name = "rds-broker"
 director_uuid = "CHANGE-ME"
 aws_access_key_id = "CHANGE-ME"
 aws_secret_access_key = "CHANGE-ME"
@@ -10,7 +10,7 @@ name: <%= deployment_name %>
 director_uuid: <%= director_uuid %>
 
 releases:
-  - name: aws-broker
+  - name: rds-broker
     version: latest
 
 compilation:
@@ -48,17 +48,6 @@ resource_pools:
     cloud_properties: {}
 
 jobs:
-  - name: cloudformation-broker
-    templates:
-      - name: cloudformation-broker
-    instances: 1
-    resource_pool: default
-    networks:
-      - name: default
-        default: [dns, gateway]
-        static_ips:
-          - 10.244.0.2
-
   - name: rds-broker
     templates:
       - name: rds-broker
@@ -69,17 +58,6 @@ jobs:
         default: [dns, gateway]
         static_ips:
           - 10.244.0.3
-
-  - name: sqs-broker
-    templates:
-      - name: sqs-broker
-    instances: 1
-    resource_pool: default
-    networks:
-      - name: default
-        default: [dns, gateway]
-        static_ips:
-          - 10.244.0.4
 
 properties:
   cloudformation-broker:
