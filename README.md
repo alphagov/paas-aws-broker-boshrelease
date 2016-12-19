@@ -104,3 +104,7 @@ We use the [GitHub issue tracker](https://github.com/alphagov/paas-rds-broker-bo
 ## Copyright
 
 Copyright (c) 2015 Pivotal Software, Inc & 2016 [Government Digital Service](https://www.gov.uk/government/organisations/government-digital-service). See [LICENSE](LICENSE) for details.
+
+## Cowbell
+
+We do add more cowbell to things because it makes them better. Feel free to do so.
