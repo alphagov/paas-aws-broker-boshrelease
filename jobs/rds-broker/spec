@@ -4,14 +4,11 @@ name: rds-broker
 packages:
   - bosh-helpers
   - rds-broker
-  - route-registrar
 
 templates:
   bin/job_properties.sh.erb: bin/job_properties.sh
   bin/rds-broker-ctl.erb: bin/rds-broker-ctl
-  bin/route-registrar-ctl.erb: bin/route-registrar_ctl
   config/rds-config.json.erb: config/rds-config.json
-  config/route-registrar.yml.erb: config/route-registrar.yml
 
 properties:
   rds-broker.log_level:
@@ -54,24 +51,3 @@ properties:
   rds-broker.catalog:
     description: "RDS Broker catalog"
     default: {}
-
-  rds-broker.route-registrar.external_host:
-    description: "Hostname to include in routing advertisement"
-  rds-broker.route-registrar.external_ip:
-    description: "External IP to include in routing advertisement"
-  rds-broker.route-registrar.nats.machines:
-    description: "List of NATS machines"
-    default: []
-  rds-broker.route-registrar.nats.port:
-    description: "NATS port"
-    default: 4222
-  rds-broker.route-registrar.nats.user:
-    description: "NATS user"
-  rds-broker.route-registrar.nats.password:
-    description: "NATS password"
-  rds-broker.route-registrar.health_checker.name:
-    description: "Label for health checker"
-    default: "rds-broker"
-  rds-broker.route-registrar.health_checker.interval:
-    description: "Interval in seconds to run health checker"
-    default: 10
