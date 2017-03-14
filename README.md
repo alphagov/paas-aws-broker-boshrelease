@@ -1,6 +1,6 @@
 # AWS Service Broker BOSH Release
 
-This is a [BOSH](http://bosh.io/) release for [AWS RDS Service Broker](https://github.com/alphagov/paas-rds-broker)
+This is a dummy [BOSH](http://bosh.io/) release for [AWS RDS Service Broker](https://github.com/alphagov/paas-rds-broker)
 
 This is a fork of [AWS Service Broker BOSH Release](https://github.com/cf-platform-eng/aws-broker-boshrelease) written by Pivotal Software Inc.
 
