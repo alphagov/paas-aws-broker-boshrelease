@@ -1,0 +1,21 @@
+{
+  "log_level": "<%= p('rds-metric-collector.log_level') %>",
+  "aws": {
+    "region": "<%= p('rds-metric-collector.aws.aws_region') %>"
+  },
+  "rds_broker": {
+    "broker_name": "<%= p('rds-metric-collector.rds-broker.broker_name') %>",
+    "db_prefix": "<%= p('rds-metric-collector.rds-broker.db_prefix') %>",
+    "master_password_seed": "<%= p('rds-metric-collector.rds-broker.master_password_seed') %>"
+  },
+  "scheduler": {
+    "instance_refresh_interval": <%= p('rds-metric-collector.scheduler.instance_refresh_interval') %>,
+    "metrics_collector_interval": <%= p('rds-metric-collector.scheduler.metrics_collector_interval') %>
+  },
+  "loggregator_emitter": {
+      "url": "<%= p('rds-metric-collector.loggregator.url') %>",
+      "ca_cert": "<%= p('rds-metric-collector.loggregator.ca_cert') %>",
+      "client_cert": "<%= p('rds-metric-collector.loggregator.client_cert') %>",
+      "client_key": "<%= p('rds-metric-collector.loggregator.client_key') %>"
+  }
+}
