@@ -1,0 +1,48 @@
+---
+name: rds-metric-collector
+
+packages:
+  - bosh-helpers
+  - rds-metric-collector
+
+templates:
+  bin/job_properties.sh.erb: bin/job_properties.sh
+  bin/rds-metric-collector-ctl.erb: bin/rds-metric-collector-ctl
+  config/config.json.erb: config/config.json
+
+properties:
+  rds-metric-collector.log_level:
+    description: "RDS Metric Collector Log Level (DEBUG, INFO, ERROR, FATAL)"
+    default: "DEBUG"
+  rds-metric-collector.aws.aws_access_key_id:
+    description: "AWS Access Key ID"
+  rds-metric-collector.aws.aws_secret_access_key:
+    description: "AWS Secret Access Key"
+  rds-metric-collector.aws.aws_region:
+    description: "AWS RDS Region"
+    default: "us-east-1"
+  rds-metric-collector.rds-broker.broker_name:
+    description: "Unique name of RDS broker, used to construct a tag for instance identification. Should be the same as rds-broker.db_prefix."
+  rds-metric-collector.rds-broker.db_prefix:
+    description: "Prefix to add to RDS DB Identifiers. Should be the same as rds-broker.db_prefix."
+    default: "cf"
+  rds-metric-collector.rds-broker.master_password_seed:
+    description: "Secret seed to be used when generating the master RDS DB password. Should be the same as rds-broker.db_prefix."
+  rds-metric-collector.scheduler.instance_refresh_interval:
+    description: "Interval to check for new provisioned instances"
+    default: 300
+  rds-metric-collector.scheduler.metrics_collector_interval:
+    description: "Interval to query for metrics in each intance"
+    default: 60
+  rds-metric-collector.loggregator.url:
+    description: "URL to loggregator ingress endpoint, usually metron agent."
+    default: localhost:3458
+  rds-metric-collector.loggregator.ca_cert:
+    description: "CA Cert for the loggregator ingress endpoint"
+    default: "/var/vcap/jobs/metron_agent/config/certs/loggregator_ca.crt"
+  rds-metric-collector.loggregator.client_cert:
+    description: "Client certificate for loggregator ingress traffic"
+    default: "/var/vcap/jobs/metron_agent/config/certs/metron_agent.crt"
+  rds-metric-collector.loggregator.client_key:
+    description: "Client certificate key for loggregator ingress traffic"
+    default: "/var/vcap/jobs/metron_agent/config/certs/metron_agent.key"
