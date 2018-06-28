@@ -19,8 +19,12 @@ export RDS_BROKER_CRON_STORE_DIR=${STORE_DIR}
 # Directory to store the RDS Broker Cron temp files
 export RDS_BROKER_CRON_TMP_DIR=${TMP_DIR}
 
+<%- if_p('rds-broker.aws_access_key_id') do |access_key| %>
 # AWS Access Key ID
-export AWS_ACCESS_KEY_ID="<%= p('rds-broker.aws_access_key_id') %>"
+export AWS_ACCESS_KEY_ID="<%= access_key %>"
+<%- end %>
 
+<%- if_p('rds-broker.aws_secret_access_key') do |secret_key| %>
 # AWS Secret Access Key
-export AWS_SECRET_ACCESS_KEY="<%= p('rds-broker.aws_secret_access_key') %>"
+export AWS_SECRET_ACCESS_KEY="<%= secret_key %>"
+<%- end %>
