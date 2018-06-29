@@ -1,9 +1,0 @@
-<% if spec.bootstrap %>
-check process rds-broker-cron
-  with pidfile /var/vcap/sys/run/rds-broker-cron/rds-broker-cron.pid
-  start program "/var/vcap/packages/bosh-helpers/monit_debugger rds-broker-cron-ctl '/var/vcap/jobs/rds-broker-cron/bin/rds-broker-cron-ctl start'"
-  stop program "/var/vcap/packages/bosh-helpers/monit_debugger rds-broker-cron-ctl '/var/vcap/jobs/rds-broker-cron/bin/rds-broker-cron-ctl stop'"
-  group vcap
-<% else %>
-# Job disabled on VM index > 0.
-<% end %>
