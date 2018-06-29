@@ -13,7 +13,7 @@ templates:
 properties:
   rds-metric-collector.log_level:
     description: "RDS Metric Collector Log Level (DEBUG, INFO, ERROR, FATAL)"
-    default: "DEBUG"
+    default: "INFO"
   rds-metric-collector.aws.aws_access_key_id:
     description: "AWS Access Key ID"
   rds-metric-collector.aws.aws_secret_access_key:
