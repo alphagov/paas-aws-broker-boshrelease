@@ -51,3 +51,9 @@ properties:
   rds-broker.catalog:
     description: "RDS Broker catalog"
     default: {}
+  rds-broker.cron_schedule:
+    description: "Schedule for cron jobs. A crontab-like expression with seconds precision (e.g. '0 0 * * * *' or '@hourly'), with fields: 'second minute hour dom month dow'"
+    default: "@hourly"
+  rds-broker.keep_snapshots_for_days:
+    description: "Number of days to keep old RDS snapshots for"
+    default: 35
