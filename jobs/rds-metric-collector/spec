@@ -9,6 +9,9 @@ templates:
   bin/job_properties.sh.erb: bin/job_properties.sh
   bin/rds-metric-collector-ctl.erb: bin/rds-metric-collector-ctl
   config/config.json.erb: config/config.json
+  config/loggregator.ca_cert.crt.erb: config/loggregator.ca_cert.crt
+  config/loggregator.client_cert.crt.erb: config/loggregator.client_cert.crt
+  config/loggregator.client_key.key.erb: config/loggregator.client_key.key
 
 properties:
   rds-metric-collector.log_level:
@@ -38,11 +41,8 @@ properties:
     description: "URL to loggregator ingress endpoint, usually metron agent."
     default: localhost:3458
   rds-metric-collector.loggregator.ca_cert:
-    description: "CA Cert for the loggregator ingress endpoint"
-    default: "/var/vcap/jobs/metron_agent/config/certs/loggregator_ca.crt"
+    description: "CA Cert for the loggregator ingress endpoint as a string"
   rds-metric-collector.loggregator.client_cert:
-    description: "Client certificate for loggregator ingress traffic"
-    default: "/var/vcap/jobs/metron_agent/config/certs/metron_agent.crt"
+    description: "Client certificate for loggregator ingress traffic as a string"
   rds-metric-collector.loggregator.client_key:
-    description: "Client certificate key for loggregator ingress traffic"
-    default: "/var/vcap/jobs/metron_agent/config/certs/metron_agent.key"
+    description: "Client certificate key for loggregator ingress traffic as a string"
