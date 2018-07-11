@@ -14,8 +14,8 @@
   },
   "loggregator_emitter": {
       "url": "<%= p('rds-metric-collector.loggregator.url') %>",
-      "ca_cert": "<%= p('rds-metric-collector.loggregator.ca_cert') %>",
-      "client_cert": "<%= p('rds-metric-collector.loggregator.client_cert') %>",
-      "client_key": "<%= p('rds-metric-collector.loggregator.client_key') %>"
+      "ca_cert": "/var/vcap/jobs/rds-metric-collector/config/loggregator.ca_cert.crt",
+      "client_cert": "/var/vcap/jobs/rds-metric-collector/config/loggregator.client_cert.crt",
+      "client_key": "/var/vcap/jobs/rds-metric-collector/config/loggregator.client_key.key"
   }
 }
