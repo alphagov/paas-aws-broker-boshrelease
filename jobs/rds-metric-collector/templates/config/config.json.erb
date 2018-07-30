@@ -17,5 +17,9 @@
       "ca_cert": "/var/vcap/jobs/rds-metric-collector/config/loggregator.ca_cert.crt",
       "client_cert": "/var/vcap/jobs/rds-metric-collector/config/loggregator.client_cert.crt",
       "client_key": "/var/vcap/jobs/rds-metric-collector/config/loggregator.client_key.key"
-  }
+  },
+  "locket_address": "<%= p('rds-metric-collector.locket.api_location') %>",
+  "locket_ca_cert_file": "/var/vcap/jobs/rds-metric-collector/config/locket.ca_cert.crt",
+  "locket_client_cert_file": "/var/vcap/jobs/rds-metric-collector/config/locket.client_cert.crt",
+  "locket_client_key_file": "/var/vcap/jobs/rds-metric-collector/config/locket.client_key.key"
 }
