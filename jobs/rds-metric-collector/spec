@@ -37,9 +37,12 @@ properties:
   rds-metric-collector.scheduler.instance_refresh_interval:
     description: "Interval to check for new provisioned instances"
     default: 300
-  rds-metric-collector.scheduler.metrics_collector_interval:
-    description: "Interval to query for metrics in each intance"
+  rds-metric-collector.scheduler.sql_metrics_collector_interval:
+    description: "Interval to query for SQL metrics in each intance"
     default: 60
+  rds-metric-collector.scheduler.cloudwatch_metrics_collector_interval:
+    description: "Interval to query for Cloudwatch metrics in each intance"
+    default: 300
   rds-metric-collector.loggregator.url:
     description: "URL to loggregator ingress endpoint, usually metron agent."
     default: localhost:3458

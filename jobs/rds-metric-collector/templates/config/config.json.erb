@@ -10,7 +10,8 @@
   },
   "scheduler": {
     "instance_refresh_interval": <%= p('rds-metric-collector.scheduler.instance_refresh_interval') %>,
-    "metrics_collector_interval": <%= p('rds-metric-collector.scheduler.metrics_collector_interval') %>
+    "sql_metrics_collector_interval": <%= p('rds-metric-collector.scheduler.sql_metrics_collector_interval') %>,
+    "cloudwatch_metrics_collector_interval": <%= p('rds-metric-collector.scheduler.cloudwatch_metrics_collector_interval') %>
   },
   "loggregator_emitter": {
       "url": "<%= p('rds-metric-collector.loggregator.url') %>",
