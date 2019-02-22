@@ -4,4 +4,3 @@
 [submodule "src/github.com/alphagov/paas-rds-metric-collector"]
 	path = src/github.com/alphagov/paas-rds-metric-collector
 	url = https://github.com/alphagov/paas-rds-metric-collector.git
-        branch = exclude_rdsadmin_queries_from_max_tx_age_163084103
