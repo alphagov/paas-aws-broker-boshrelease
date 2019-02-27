@@ -4,6 +4,7 @@ set -u # report the usage of uninitialized variables
 # Set Golang dependency
 export GOROOT=$(readlink -nf /var/vcap/packages/golang)
 export PATH=${GOROOT}/bin:${PATH}
+export GOCACHE=/tmp/gocache
 
 # Build AWS RDS Service Broker package
 echo "Building RDS Service Broker..."
