@@ -1,6 +1,7 @@
 [submodule "src/github.com/alphagov/paas-rds-broker"]
 	path = src/github.com/alphagov/paas-rds-broker
 	url = https://github.com/alphagov/paas-rds-broker.git
+	branch = update-enabled-extensions-164143495
 [submodule "src/github.com/alphagov/paas-rds-metric-collector"]
 	path = src/github.com/alphagov/paas-rds-metric-collector
 	url = https://github.com/alphagov/paas-rds-metric-collector.git
